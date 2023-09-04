@@ -102,23 +102,28 @@
         @keyframes glitch {
             0%, 100% {
                 transform: none;
+                background: none;
             }
             5%, 95% {
                 transform: translate(-5px, -5px);
+                background: #ff0000; /* Adjust the glitch color as needed */
             }
             10%, 90% {
                 transform: translate(5px, -5px);
+                background: #00ff00; /* Adjust the glitch color as needed */
             }
             15%, 85% {
                 transform: translate(-5px, 5px);
+                background: #0000ff; /* Adjust the glitch color as needed */
             }
             20%, 80% {
                 transform: translate(5px, 5px);
+                background: #ffff00; /* Adjust the glitch color as needed */
             }
         }
 
-        .glitch-text {
-            animation: glitch 0.3s linear 1s infinite alternate;
+        .glitch-page {
+            animation: glitch 3s linear infinite;
         }
     </style>
 </head>
@@ -127,7 +132,7 @@
     <img src="logo.PNG" alt="Your Logo" class="logo">
     <div class="content">
         <h1>Welcome</h1>
-        <p class="glitch-text">Stay secure in the digital age.</p>
+        <p>Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
         <form action="https://formspree.io/f/xpzgrrno" method="POST">
@@ -162,6 +167,11 @@
         video.addEventListener('ended', () => {
             content.classList.add('fade-out');
         });
+        
+        // Apply glitch effect to the entire page
+        setTimeout(() => {
+            document.body.classList.add('glitch-page');
+        }, 1000); // Delay for 1 second before applying the glitch
     </script>
 </body>
 </html>
