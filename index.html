@@ -38,7 +38,7 @@
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 300px; /* Increased logo size */
             margin-bottom: 20px;
         }
 
@@ -82,41 +82,16 @@
             cursor: pointer;
         }
 
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .fade-out {
-            animation: fadeOut 2s linear forwards;
-        }
-
-        /* Glitch overlay */
-        .glitch-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
+        /* Glitch overlay removed */
     </style>
 </head>
 <body>
-    <!-- Glitch overlay -->
-    <canvas class="glitch-canvas"></canvas>
-
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
     
     <!-- Content -->
     <div class="content">
-        <!-- Logo -->
+        <!-- Logo in the middle and bigger -->
         <img src="logo.PNG" alt="Your Logo" class="logo">
         
         <h1>Welcome to Cybersecurity World</h1>
@@ -251,24 +226,6 @@
             "retina_detect": true
         });
 
-        const video = document.querySelector('video');
-        const content = document.querySelector('.content');
-
-        video.addEventListener('ended', () => {
-            content.classList.add('fade-out');
-        });
-
-        // Glitch effect using glitch-canvas library
-        const canvas = document.querySelector('.glitch-canvas');
-        const ctx = canvas.getContext('2d');
-        const image = new Image();
-
-        image.src = 'https://cdn.glitch.global/15876c39-3392-4429-915b-4324f8138ad7/MOSHED-2023-9-4-0-35-0.jpg?v=1693803106158'; // Replace with your glitch image URL
-
-        image.onload = () => {
-            canvas.width = image.width;
-            canvas.height = image.height;
-        };
     </script>
 </body>
 </html>
