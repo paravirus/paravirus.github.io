@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParaV!ru$</title>
+    <title>Cybersecurity Dark Theme</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -95,20 +95,58 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            max-width: 150px;
+            max-width: 100px;
             z-index: 1;
+        }
+
+        /* Glitch effect */
+        @keyframes noise {
+            20%, 24%, 25%, 29%, 30%, 49%, 50%, 51%, 55%, 56%, 74%, 75%, 76%, 80%, 81%, 99%, 100% {
+                clip: rect(0, auto, 0, auto);
+            }
+            21% {
+                clip: rect(6px, auto, 8px, auto);
+            }
+            26% {
+                clip: rect(3px, auto, 4px, auto);
+            }
+            31% {
+                clip: rect(6px, auto, 2px, auto);
+            }
+            32%, 72% {
+                clip: rect(8px, auto, 10px, auto);
+            }
+            34% {
+                clip: rect(9px, auto, 3px, auto);
+            }
+            35% {
+                clip: rect(2px, auto, 1px, auto);
+            }
+            39%, 54%, 59%, 64%, 69%, 84%, 89%, 94% {
+                clip: rect(4px, auto, 2px, auto);
+            }
+            40%, 90% {
+                clip: rect(6px, auto, 5px, auto);
+            }
+            49%, 99% {
+                clip: rect(9px, auto, 8px, auto);
+            }
+        }
+
+        .glitch {
+            animation: noise 0.2s steps(10) 1s infinite alternate;
         }
     </style>
 </head>
 <body>
     <img src="logo.PNG" alt="Your Logo" class="logo">
     <video autoplay loop muted>
-        <source src="Video.mp4" type="video/mp4">
+        <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="content">
-        <h1>Welcome to ParaV!ru$</h1>
-        <p>Stay secure in the digital age.</p>
+        <h1>Welcome to Cybersecurity World</h1>
+        <p class="glitch">Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
         <form action="https://formspree.io/f/xpzgrrno" method="POST">
@@ -130,8 +168,4 @@
         const content = document.querySelector('.content');
 
         video.addEventListener('ended', () => {
-            content.classList.add('fade-out');
-        });
-    </script>
-</body>
-</html>
+            content.classList.add('fade-out
