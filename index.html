@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Dark Theme</title>
+    <title>ParaV!ru$</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -38,9 +38,8 @@
         }
 
         .logo {
-            max-width: 2000px; /* Increased logo size */
+            max-width: 800px; /* Increased logo size */
             margin-bottom: 20px;
-            animation: glitch 10s infinite; /* Apply glitch animation for 10 seconds */
         }
 
         h1 {
@@ -76,55 +75,18 @@
         }
 
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #000; /* Darker button color */
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
         }
 
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .fade-out {
-            animation: fadeOut 2s linear forwards;
+        input[type="submit"]:hover {
+            background-color: #333; /* Darker color on hover */
         }
 
         /* Glitch overlay removed */
-        
-        /* Glitch animation for the logo */
-        @keyframes glitch {
-            0% {
-                transform: translate(0);
-                background-color: #ff0000; /* Change colors as needed */
-            }
-            20% {
-                transform: translate(-5px, -5px);
-                background-color: #00ff00;
-            }
-            40% {
-                transform: translate(5px, 5px);
-                background-color: #0000ff;
-            }
-            60% {
-                transform: translate(-5px, 5px);
-                background-color: #ff00ff;
-            }
-            80% {
-                transform: translate(5px, -5px);
-                background-color: #ffff00;
-            }
-            100% {
-                transform: translate(0);
-                background-color: #ff0000;
-            }
-        }
     </style>
 </head>
 <body>
@@ -133,7 +95,7 @@
     
     <!-- Content -->
     <div class="content">
-        <!-- Logo in the middle and glitch animation -->
+        <!-- Logo in the middle -->
         <img src="logo1.PNG" alt="Your Logo" class="logo">
         
         <h1>Welcome to Cybersecurity World</h1>
@@ -267,12 +229,6 @@
             },
             "retina_detect": true
         });
-
-        // Stop glitch animation after 10 seconds
-        setTimeout(() => {
-            const logo = document.querySelector('.logo');
-            logo.style.animation = 'none';
-        }, 10000);
     </script>
 </body>
 </html>
