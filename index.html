@@ -100,41 +100,44 @@
         }
 
         /* Glitch effect */
-        @keyframes noise {
-            20%, 24%, 25%, 29%, 30%, 49%, 50%, 51%, 55%, 56%, 74%, 75%, 76%, 80%, 81%, 99%, 100% {
-                clip: rect(0, auto, 0, auto);
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
             }
-            21% {
-                clip: rect(6px, auto, 8px, auto);
+            10% {
+                transform: translate(-5px, 5px);
             }
-            26% {
-                clip: rect(3px, auto, 4px, auto);
+            20% {
+                transform: translate(5px, -5px);
             }
-            31% {
-                clip: rect(6px, auto, 2px, auto);
+            30% {
+                transform: translate(-5px, 5px);
             }
-            32%, 72% {
-                clip: rect(8px, auto, 10px, auto);
+            40% {
+                transform: translate(-5px, -5px);
             }
-            34% {
-                clip: rect(9px, auto, 3px, auto);
+            50% {
+                transform: translate(5px, 5px);
             }
-            35% {
-                clip: rect(2px, auto, 1px, auto);
+            60% {
+                transform: translate(5px, -5px);
             }
-            39%, 54%, 59%, 64%, 69%, 84%, 89%, 94% {
-                clip: rect(4px, auto, 2px, auto);
+            70% {
+                transform: translate(-5px, 5px);
             }
-            40%, 90% {
-                clip: rect(6px, auto, 5px, auto);
+            80% {
+                transform: translate(-5px, -5px);
             }
-            49%, 99% {
-                clip: rect(9px, auto, 8px, auto);
+            90% {
+                transform: translate(5px, 5px);
+            }
+            100% {
+                transform: translate(0);
             }
         }
 
-        .glitch {
-            animation: noise 0.2s steps(10) 1s infinite alternate;
+        .glitch-text {
+            animation: glitch 1s linear 0.2s infinite alternate;
         }
     </style>
 </head>
@@ -146,7 +149,7 @@
     </video>
     <div class="content">
         <h1>Welcome to Cybersecurity World</h1>
-        <p class="glitch">Stay secure in the digital age.</p>
+        <p class="glitch-text">Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
         <form action="https://formspree.io/f/xpzgrrno" method="POST">
@@ -168,4 +171,8 @@
         const content = document.querySelector('.content');
 
         video.addEventListener('ended', () => {
-            content.classList.add('fade-out
+            content.classList.add('fade-out');
+        });
+    </script>
+</body>
+</html>
