@@ -15,14 +15,13 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        video {
+        #particles-js {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
+            z-index: -1; /* Place particles behind other elements */
         }
 
         .content {
@@ -36,6 +35,14 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px; /* Adjust the top position as needed */
+            left: 20px; /* Adjust the left position as needed */
+            max-width: 100px;
+            z-index: 1;
         }
 
         h1 {
@@ -91,64 +98,35 @@
             animation: fadeOut 2s linear forwards;
         }
 
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            max-width: 100px;
-            z-index: 1;
-        }
-
         /* Glitch effect */
         @keyframes glitch {
-            0% {
-                transform: translate(0);
+            0%, 100% {
+                transform: none;
             }
-            10% {
-                transform: translate(-5px, 5px);
-            }
-            20% {
-                transform: translate(5px, -5px);
-            }
-            30% {
-                transform: translate(-5px, 5px);
-            }
-            40% {
+            5%, 95% {
                 transform: translate(-5px, -5px);
             }
-            50% {
-                transform: translate(5px, 5px);
-            }
-            60% {
+            10%, 90% {
                 transform: translate(5px, -5px);
             }
-            70% {
+            15%, 85% {
                 transform: translate(-5px, 5px);
             }
-            80% {
-                transform: translate(-5px, -5px);
-            }
-            90% {
+            20%, 80% {
                 transform: translate(5px, 5px);
-            }
-            100% {
-                transform: translate(0);
             }
         }
 
         .glitch-text {
-            animation: glitch 1s linear 0.2s infinite alternate;
+            animation: glitch 0.3s linear 1s infinite alternate;
         }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <img src="logo.PNG" alt="Your Logo" class="logo">
-    <video autoplay loop muted>
-        <source src="your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
     <div class="content">
-        <h1>Welcome to Cybersecurity World</h1>
+        <h1>Welcome</h1>
         <p class="glitch-text">Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
@@ -166,7 +144,18 @@
         </form>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        particlesJS('particles-js', {
+            "particles": {
+                // Configure your particles background settings here
+            },
+            "interactivity": {
+                // Configure interactivity options here
+            },
+            "retina_detect": true
+        });
+
         const video = document.querySelector('video');
         const content = document.querySelector('.content');
 
