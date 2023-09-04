@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Dark Theme</title>
+    <title>ParaV!ru$</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -26,30 +26,36 @@
 
         .content {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background-color: rgba(0, 0, 0, 0.7);
         }
 
         .logo {
-            max-width: 100px;
+            max-width: 200px;
             margin-bottom: 20px;
         }
 
         h1 {
             font-size: 36px;
+            text-align: center;
             margin-bottom: 20px;
         }
 
         p {
             font-size: 24px;
+            text-align: center;
         }
 
         h2 {
             font-size: 28px;
+            text-align: center;
             margin-top: 20px;
         }
 
@@ -66,7 +72,6 @@
             border: none;
             background-color: #333;
             color: #fff;
-            font-size: 18px; /* Adjust the font size */
         }
 
         input[type="submit"] {
@@ -75,7 +80,6 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 18px; /* Adjust the font size */
         }
 
         @keyframes fadeOut {
@@ -104,19 +108,22 @@
     </style>
 </head>
 <body>
+    <!-- Glitch overlay -->
+    <canvas class="glitch-canvas"></canvas>
+
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
     
-    <!-- Logo -->
-    <img src="logo.PNG" alt="Your Logo" class="logo">
-    
     <!-- Content -->
     <div class="content">
+        <!-- Logo -->
+        <img src="logo.PNG" alt="Your Logo" class="logo">
+        
         <h1>Welcome to Cybersecurity World</h1>
         <p>Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
-        <form action="https://formspree.io/your-email@example.com" method="POST">
+        <form action="https://formspree.io/f/xpzgrrno" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
 
@@ -207,7 +214,7 @@
                 "events": {
                     "onhover": {
                         "enable": true,
-                        "mode": "grab"
+                        "mode": "repulse"
                     },
                     "onclick": {
                         "enable": true,
@@ -228,6 +235,10 @@
                         "duration": 2,
                         "opacity": 8,
                         "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
                     },
                     "push": {
                         "particles_nb": 4
@@ -257,14 +268,6 @@
         image.onload = () => {
             canvas.width = image.width;
             canvas.height = image.height;
-
-            const glitch = new GlitchCanvas(canvas, image);
-            glitch.play();
-
-            // Optionally, stop the glitch effect after 3 seconds
-            setTimeout(() => {
-                glitch.stop();
-            }, 3000);
         };
     </script>
 </body>
