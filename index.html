@@ -38,29 +38,30 @@
         }
 
         .logo {
-            max-width: 800px; /* Increased logo size */
+            max-width: 80%; /* Adjusted logo size for mobile */
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 24px; /* Adjusted font size for mobile */
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Adjusted margin for mobile */
         }
 
         p {
-            font-size: 24px;
+            font-size: 18px; /* Adjusted font size for mobile */
             text-align: center;
+            margin-bottom: 10px; /* Adjusted margin for mobile */
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 20px; /* Adjusted font size for mobile */
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px; /* Adjusted margin for mobile */
         }
 
         label {
-            font-size: 18px;
+            font-size: 16px; /* Adjusted font size for mobile */
         }
 
         input[type="text"],
@@ -72,6 +73,7 @@
             border: none;
             background-color: #333;
             color: #fff;
+            font-size: 16px; /* Adjusted font size for mobile */
         }
 
         input[type="submit"] {
@@ -80,6 +82,7 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            font-size: 16px; /* Adjusted font size for mobile */
         }
 
         input[type="submit"]:hover {
@@ -87,6 +90,42 @@
         }
 
         /* Glitch overlay removed */
+
+        @media (max-width: 768px) {
+            /* Adjust styles for screens with a maximum width of 768px (typical tablet and mobile screens) */
+            .logo {
+                max-width: 80%;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                font-size: 14px;
+            }
+
+            input[type="submit"] {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
