@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParaV!ru$</title>
+    <title>Cybersecurity Dark Theme</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -100,8 +100,13 @@
 
         /* Glitch overlay */
         .glitch-wrapper {
-            position: relative;
-            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
         }
 
         .glitch-animation {
@@ -112,7 +117,7 @@
             height: 100%;
             mix-blend-mode: overlay;
             pointer-events: none;
-            animation: glitch 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+            animation: glitch 2s linear infinite alternate;
         }
 
         @keyframes glitch {
@@ -128,6 +133,11 @@
     </style>
 </head>
 <body>
+    <!-- Glitch overlay -->
+    <div class="glitch-wrapper">
+        <div class="glitch-animation"></div>
+    </div>
+
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
     
@@ -152,11 +162,6 @@
 
             <input type="submit" value="Submit">
         </form>
-    </div>
-
-    <!-- Glitch overlay -->
-    <div class="glitch-wrapper">
-        <div class="glitch-animation"></div>
     </div>
 
     <!-- Particles.js Configuration -->
