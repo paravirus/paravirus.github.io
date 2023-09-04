@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParaV!ru$</title>
+    <title>Cybersecurity Dark Theme</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -24,6 +24,18 @@
             z-index: -1;
         }
 
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            background: url('https://github.com/paravirus/paravirus.github.io/blob/main/MOSHED-2023-9-4-1-30-18.webmm') no-repeat center center fixed;
+            background-size: cover;
+            animation: fadeIn 4s forwards, fadeOut 2s 4s forwards;
+        }
+
         .content {
             position: absolute;
             top: 0;
@@ -38,30 +50,31 @@
         }
 
         .logo {
-            max-width: 80%; /* Adjusted logo size for mobile */
+            max-width: 80%;
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 24px; /* Adjusted font size for mobile */
+            font-size: 24px;
             text-align: center;
-            margin-bottom: 10px; /* Adjusted margin for mobile */
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: 18px; /* Adjusted font size for mobile */
+            font-size: 16px;
             text-align: center;
-            margin-bottom: 10px; /* Adjusted margin for mobile */
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 20px; /* Adjusted font size for mobile */
+            font-size: 20px;
             text-align: center;
-            margin-top: 10px; /* Adjusted margin for mobile */
+            margin-top: 20px;
         }
 
         label {
-            font-size: 16px; /* Adjusted font size for mobile */
+            font-size: 18px;
+            margin-bottom: 5px;
         }
 
         input[type="text"],
@@ -73,57 +86,38 @@
             border: none;
             background-color: #333;
             color: #fff;
-            font-size: 16px; /* Adjusted font size for mobile */
         }
 
         input[type="submit"] {
-            background-color: #000; /* Darker button color */
+            background-color: #000;
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            font-size: 16px; /* Adjusted font size for mobile */
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #333; /* Darker color on hover */
+            background-color: #333;
         }
 
-        /* Glitch overlay removed */
-
-        @media (min-width: 768px) {
-            /* Adjust styles for screens with a minimum width of 768px (PC screens) */
-            .logo {
-                max-width: 300px; /* Adjusted logo size for PC */
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 1;
             }
-
-            h1 {
-                font-size: 36px;
-                margin-bottom: 20px;
+            100% {
+                opacity: 1;
             }
+        }
 
-            p {
-                font-size: 24px;
-                margin-bottom: 20px;
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
             }
-
-            h2 {
-                font-size: 28px;
-                margin-top: 20px;
-            }
-
-            label {
-                font-size: 18px;
-            }
-
-            input[type="text"],
-            input[type="email"],
-            textarea {
-                font-size: 18px;
-            }
-
-            input[type="submit"] {
-                font-size: 18px;
+            100% {
+                opacity: 0;
+                display: none;
             }
         }
     </style>
@@ -132,16 +126,20 @@
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
     
+    <!-- Video Overlay -->
+    <div class="video-overlay"></div>
+    
     <!-- Content -->
     <div class="content">
         <!-- Logo in the middle -->
-        <img src="logo1.PNG" alt="Your Logo" class="logo">
+        <img src="your-logo.webm" alt="Your Logo" class="logo">
         
         <h1>Welcome to Cybersecurity World</h1>
         <p>Stay secure in the digital age.</p>
 
+        <!-- Contact Form -->
         <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/xpzgrrno" method="POST">
+        <form action="https://formspree.io/your-email@example.com" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
 
