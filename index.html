@@ -98,32 +98,38 @@
             animation: fadeOut 2s linear forwards;
         }
 
-        /* Glitch effect */
+        /* Glitch overlay */
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .glitch-animation {
+            animation: glitch 3s linear infinite;
+            opacity: 0.7;
+        }
+
         @keyframes glitch {
             0%, 100% {
-                transform: none;
-                background: none;
+                transform: translate(0);
             }
             5%, 95% {
                 transform: translate(-5px, -5px);
-                background: #ff0000; /* Adjust the glitch color as needed */
             }
             10%, 90% {
                 transform: translate(5px, -5px);
-                background: #00ff00; /* Adjust the glitch color as needed */
             }
             15%, 85% {
                 transform: translate(-5px, 5px);
-                background: #0000ff; /* Adjust the glitch color as needed */
             }
             20%, 80% {
                 transform: translate(5px, 5px);
-                background: #ffff00; /* Adjust the glitch color as needed */
             }
-        }
-
-        .glitch-page {
-            animation: glitch 3s linear infinite;
         }
     </style>
 </head>
@@ -131,7 +137,7 @@
     <div id="particles-js"></div>
     <img src="logo.PNG" alt="Your Logo" class="logo">
     <div class="content">
-        <h1>Welcome</h1>
+        <h1>Welcome to Cybersecurity World</h1>
         <p>Stay secure in the digital age.</p>
 
         <h2>Contact Us</h2>
@@ -147,6 +153,11 @@
 
             <input type="submit" value="Submit">
         </form>
+    </div>
+
+    <!-- Glitch overlay -->
+    <div class="glitch-overlay">
+        <div class="glitch-animation"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -167,11 +178,6 @@
         video.addEventListener('ended', () => {
             content.classList.add('fade-out');
         });
-        
-        // Apply glitch effect to the entire page
-        setTimeout(() => {
-            document.body.classList.add('glitch-page');
-        }, 1000); // Delay for 1 second before applying the glitch
     </script>
 </body>
 </html>
